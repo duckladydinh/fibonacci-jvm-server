@@ -1,0 +1,8 @@
+# Run:
+#  buf generate https://github.com/duckladydinh/giathuanapis.git
+version: v1
+plugins:
+- name: java
+  out: src/gen/java
+- name: grpc-java
+  out: src/gen/java
