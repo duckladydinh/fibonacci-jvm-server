@@ -19,6 +19,7 @@ demonstrates my philosophical developer workflow with gRPC and Protobuf.
 * It is defined in a separate GitHub repository (this `fibonacci-jvm-server`).
 * It consumes the API for generation-only using Buf (only `buf.gen.yaml`, NO other Buf files).
 * It generates files into a separate `src/gen/java` directory.
+* It generates a docker image instead of relying solely on the binary (jar).
 
 ## Assessment
 
