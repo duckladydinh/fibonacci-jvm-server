@@ -1,5 +1,6 @@
 package com.giathuan.examples.fibonacci;
 
+import com.google.common.flogger.FluentLogger;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.protobuf.services.ProtoReflectionService;
@@ -7,9 +8,11 @@ import io.grpc.protobuf.services.ProtoReflectionService;
 import java.io.IOException;
 
 public class FibonacciServer {
+  private static final FluentLogger LOGGER = FluentLogger.forEnclosingClass();
+
   public static void main(String[] args) throws InterruptedException, IOException {
     int port = 9999;
-    System.out.printf("FibonacciServer starting at port :%d...\n", port);
+    LOGGER.atInfo().log("FibonacciServer starting at port :%d...\n", port);
 
     Server server =
         ServerBuilder.forPort(port)

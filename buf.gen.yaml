@@ -2,7 +2,9 @@
 #  buf generate https://github.com/duckladydinh/giathuanapis.git
 version: v1
 plugins:
-- name: java
-  out: src/gen/java
-- name: grpc-java
-  out: src/gen/java
+  - name: java
+    out: src/gen/java
+  - name: grpc-java
+    out: src/gen/java
+  - name: grpc-kotlin
+    out: src/gen/kotlin

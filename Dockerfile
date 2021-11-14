@@ -1,5 +1,5 @@
 # You can manually build the image by running:
-#  docker build build/libs -f Dockerfile -t hub.docker.com/duckladydinh/fibonacci-jvm-server:1.0-SNAPSHOT
+#  ./gradlew build && docker build build/libs -f Dockerfile -t hub.docker.com/duckladydinh/fibonacci-jvm-server:1.0-SNAPSHOT
 #
 # You can manually run the image by running:
 #  docker run -it -p 9999:9999 hub.docker.com/duckladydinh/fibonacci-jvm-server:1.0-SNAPSHOT

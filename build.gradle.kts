@@ -17,6 +17,8 @@ repositories {
 }
 
 dependencies {
+    implementation("com.google.flogger:flogger:0.7.1")
+    runtimeOnly("com.google.flogger:flogger-system-backend:0.7.1")
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.5.31")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.1")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.1")
@@ -30,7 +32,9 @@ dependencies {
     implementation("io.grpc:grpc-services:1.42.0")
     compileOnly("org.apache.tomcat:annotations-api:6.0.53") // necessary for Java 9+
 
-    //
+    // grpc-kotlin
+    implementation("io.grpc:grpc-kotlin-stub:1.2.0")
+
 }
 
 tasks.getByName<Test>("test") {
@@ -46,7 +50,7 @@ kotlin {
 
 sourceSets {
     main {
-        java.srcDir("src/gen/java")
+        java.srcDirs("src/gen/java", "src/gen/kotlin")
     }
 }
 
