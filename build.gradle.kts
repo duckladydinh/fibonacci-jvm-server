@@ -2,6 +2,7 @@ plugins {
     kotlin("jvm") version "1.5.31"
     java
     application
+    id("com.palantir.docker") version "0.30.0"
 }
 
 group = "com.giathuan.examples.fibonacci"
@@ -56,7 +57,6 @@ sourceSets {
  *
  * Then you can run the jar file by running:
  *     java -jar build/libs/${project.name}-${project.version}.jar
-;
  * By default, without this configuration, the `jar task` will still generate a jar file but without (1) "Main-Class"
  * attribute and (2) dependencies.
  * */
@@ -73,4 +73,30 @@ tasks.jar {
     // Since there is no dependencies included by default, we need to add them.
     from(configurations.runtimeClasspath.get().map { if (it.isDirectory) it else zipTree(it) })
     duplicatesStrategy = DuplicatesStrategy.INCLUDE
+}
+
+/**
+ * This is a single standard snippet for generating a docker image using com.palantir.docker plugin. To generate the
+ * image, run:
+ *     ./gradlew docker
+ *
+ * After that the image will be available in the local docker registry and can be viewed by running:
+ *     docker ps
+ *
+ * Then we can run the image by running:
+ *     docker run -it -p 9999:9999 hub.docker.com/duckladydinh/fibonacci-jvm-server:1.0-SNAPSHOT
+ *
+ * where -it = interactive and -p = mapping from host port to container port.
+ * */
+docker {
+    // Since the jar file won't be generated before the build, we have to depend on it.
+    val buildTask = tasks.build.get()
+    dependsOn(buildTask)
+
+    // The name of your image.
+    name = "hub.docker.com/duckladydinh/${project.name}:${project.version}"
+
+    // Files that will be available when building the docker image.
+    // This command will copy build/libs/${project.name}.jar into ${project.name}.jar in docker build environment.
+    files("build/libs/${project.name}.jar")
 }

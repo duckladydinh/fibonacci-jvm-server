@@ -8,9 +8,11 @@ import java.io.IOException;
 
 public class FibonacciServer {
   public static void main(String[] args) throws InterruptedException, IOException {
-    System.out.println("FibonacciServer starting...");
+    int port = 9999;
+    System.out.printf("FibonacciServer starting at port :%d...\n", port);
+
     Server server =
-        ServerBuilder.forPort(9999)
+        ServerBuilder.forPort(port)
             .addService(ProtoReflectionService.newInstance())
             .addService(new FibonacciService())
             .build();
