@@ -48,3 +48,29 @@ sourceSets {
         java.srcDir("src/gen/java")
     }
 }
+
+/**
+ * This is a single standard snippet for generating a fat jar using Gradle and the default `jar task` which is part of
+ * the build process. Hence, to generate a jar, simply run:
+ *     ./gradlew build
+ *
+ * Then you can run the jar file by running:
+ *     java -jar build/libs/${project.name}-${project.version}.jar
+;
+ * By default, without this configuration, the `jar task` will still generate a jar file but without (1) "Main-Class"
+ * attribute and (2) dependencies.
+ * */
+tasks.jar {
+    // [optional]
+    // We can rename the jar file to build/libs/${project.name}.jar for convenience.
+    archiveFileName.set(project.name + ".jar")
+
+    // Since there is no "Main-Class" by default, we need to add it.
+    manifest {
+        attributes("Main-Class" to "com.giathuan.examples.fibonacci.FibonacciServer")
+    }
+
+    // Since there is no dependencies included by default, we need to add them.
+    from(configurations.runtimeClasspath.get().map { if (it.isDirectory) it else zipTree(it) })
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+}
