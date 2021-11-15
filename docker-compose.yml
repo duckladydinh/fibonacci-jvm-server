@@ -2,7 +2,7 @@
 #  docker-compose up
 version: "3.3"
 services:
-  backend:
+  fibonacci-jvm-server:
     image: hub.docker.com/duckladydinh/fibonacci-jvm-server:1.0-SNAPSHOT
     ports:
       - "9999:9999"
