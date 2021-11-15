@@ -1,0 +1,8 @@
+# To run this:
+#  docker-compose up
+version: "3.3"
+services:
+  backend:
+    image: hub.docker.com/duckladydinh/fibonacci-jvm-server:1.0-SNAPSHOT
+    ports:
+      - "9999:9999"
