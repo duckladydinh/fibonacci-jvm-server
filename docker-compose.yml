@@ -6,6 +6,6 @@ services:
     image: hub.docker.com/duckladydinh/fibonacci-jvm-server:1.0-SNAPSHOT
     ports:
       - "9999:9999"
-    container_name: fibonacci-jvm-server
+    # container_name: fibonacci-jvm-server
     env_file:
       - docker-environment-variables.env

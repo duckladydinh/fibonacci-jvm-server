@@ -9,7 +9,7 @@ group = "com.giathuan.examples.fibonacci"
 
 version = "1.0-SNAPSHOT"
 
-application { mainClass.set("com.giathuan.examples.fibonacci.FibonacciServer") }
+application { mainClass.set("com.giathuan.examples.fibonacci.v1.FibonacciServer") }
 
 repositories { mavenCentral() }
 
@@ -68,7 +68,7 @@ tasks.jar {
   archiveFileName.set(project.name + ".jar")
 
   // Since there is no "Main-Class" by default, we need to add it.
-  manifest { attributes("Main-Class" to "com.giathuan.examples.fibonacci.FibonacciServer") }
+  manifest { attributes("Main-Class" to "com.giathuan.examples.fibonacci.v1.FibonacciServer") }
 
   // Since there is no dependencies included by default, we need to add them.
   from(configurations.runtimeClasspath.get().map { if (it.isDirectory) it else zipTree(it) })

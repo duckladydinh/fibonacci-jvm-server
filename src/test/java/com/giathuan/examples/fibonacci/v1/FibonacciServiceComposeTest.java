@@ -14,7 +14,7 @@ import java.io.File;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-/** ./gradlew test --tests com.giathuan.examples.fibonacci.FibonacciServiceComposeTest. */
+/** ./gradlew test --tests com.giathuan.examples.fibonacci.v1.FibonacciServiceComposeTest. */
 @Testcontainers
 public final class FibonacciServiceComposeTest {
   private static final int FIBONACCI_JVM_SERVER_PORT = 9999;

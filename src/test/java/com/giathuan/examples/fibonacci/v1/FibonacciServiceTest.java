@@ -14,7 +14,7 @@ import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-/** ./gradlew test --tests com.giathuan.examples.fibonacci.FibonacciServiceTest. */
+/** ./gradlew test --tests com.giathuan.examples.fibonacci.v1.FibonacciServiceTest. */
 public final class FibonacciServiceTest {
 
   private static FibonacciServiceGrpc.FibonacciServiceBlockingStub stub;
