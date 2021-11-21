@@ -1,5 +1,5 @@
 # Run:
-#  buf generate https://github.com/duckladydinh/giathuanapis.git
+#  rm -rf src/gen/* && buf generate https://github.com/duckladydinh/giathuanapis.git
 version: v1
 plugins:
   - name: java

@@ -1,4 +1,4 @@
-package com.giathuan.examples.fibonacci;
+package com.giathuan.examples.fibonacci.v1;
 
 import com.google.common.flogger.FluentLogger;
 import io.grpc.Server;

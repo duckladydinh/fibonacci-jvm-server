@@ -1,4 +1,4 @@
-package com.giathuan.examples.fibonacci;
+package com.giathuan.examples.fibonacci.v1;
 
 import io.grpc.Server;
 import io.grpc.Status.Code;
@@ -38,9 +38,10 @@ public final class FibonacciServiceTest {
 
   @Test
   public void getFibonacci_validIndex_returnsExpectedValue() {
-    Fibonacci fibonacci = stub.getFibonacci(GetFibonacciRequest.newBuilder().setIndex(12).build());
+    GetFibonacciResponse resp =
+        stub.getFibonacci(GetFibonacciRequest.newBuilder().setIndex(12).build());
 
-    assertEquals(144, fibonacci.getValue());
+    assertEquals(144, resp.getValue());
   }
 
   @Test

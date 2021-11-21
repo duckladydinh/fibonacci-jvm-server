@@ -1,4 +1,4 @@
-package com.giathuan.examples.fibonacci;
+package com.giathuan.examples.fibonacci.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
@@ -9,38 +9,38 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.42.1)",
-    comments = "Source: giathuan/examples/fibonacci/fibonacci.proto")
+    comments = "Source: giathuan/examples/fibonacci/v1/fibonacci.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class FibonacciServiceGrpc {
 
   private FibonacciServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "giathuan.examples.fibonacci.FibonacciService";
+  public static final String SERVICE_NAME = "giathuan.examples.fibonacci.v1.FibonacciService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.giathuan.examples.fibonacci.GetFibonacciRequest,
-      com.giathuan.examples.fibonacci.Fibonacci> getGetFibonacciMethod;
+  private static volatile io.grpc.MethodDescriptor<com.giathuan.examples.fibonacci.v1.GetFibonacciRequest,
+      com.giathuan.examples.fibonacci.v1.GetFibonacciResponse> getGetFibonacciMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "GetFibonacci",
-      requestType = com.giathuan.examples.fibonacci.GetFibonacciRequest.class,
-      responseType = com.giathuan.examples.fibonacci.Fibonacci.class,
+      requestType = com.giathuan.examples.fibonacci.v1.GetFibonacciRequest.class,
+      responseType = com.giathuan.examples.fibonacci.v1.GetFibonacciResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.giathuan.examples.fibonacci.GetFibonacciRequest,
-      com.giathuan.examples.fibonacci.Fibonacci> getGetFibonacciMethod() {
-    io.grpc.MethodDescriptor<com.giathuan.examples.fibonacci.GetFibonacciRequest, com.giathuan.examples.fibonacci.Fibonacci> getGetFibonacciMethod;
+  public static io.grpc.MethodDescriptor<com.giathuan.examples.fibonacci.v1.GetFibonacciRequest,
+      com.giathuan.examples.fibonacci.v1.GetFibonacciResponse> getGetFibonacciMethod() {
+    io.grpc.MethodDescriptor<com.giathuan.examples.fibonacci.v1.GetFibonacciRequest, com.giathuan.examples.fibonacci.v1.GetFibonacciResponse> getGetFibonacciMethod;
     if ((getGetFibonacciMethod = FibonacciServiceGrpc.getGetFibonacciMethod) == null) {
       synchronized (FibonacciServiceGrpc.class) {
         if ((getGetFibonacciMethod = FibonacciServiceGrpc.getGetFibonacciMethod) == null) {
           FibonacciServiceGrpc.getGetFibonacciMethod = getGetFibonacciMethod =
-              io.grpc.MethodDescriptor.<com.giathuan.examples.fibonacci.GetFibonacciRequest, com.giathuan.examples.fibonacci.Fibonacci>newBuilder()
+              io.grpc.MethodDescriptor.<com.giathuan.examples.fibonacci.v1.GetFibonacciRequest, com.giathuan.examples.fibonacci.v1.GetFibonacciResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetFibonacci"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.giathuan.examples.fibonacci.GetFibonacciRequest.getDefaultInstance()))
+                  com.giathuan.examples.fibonacci.v1.GetFibonacciRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.giathuan.examples.fibonacci.Fibonacci.getDefaultInstance()))
+                  com.giathuan.examples.fibonacci.v1.GetFibonacciResponse.getDefaultInstance()))
               .setSchemaDescriptor(new FibonacciServiceMethodDescriptorSupplier("GetFibonacci"))
               .build();
         }
@@ -105,8 +105,8 @@ public final class FibonacciServiceGrpc {
      * Get a Fibonacci number specified by its index.
      * </pre>
      */
-    public void getFibonacci(com.giathuan.examples.fibonacci.GetFibonacciRequest request,
-        io.grpc.stub.StreamObserver<com.giathuan.examples.fibonacci.Fibonacci> responseObserver) {
+    public void getFibonacci(com.giathuan.examples.fibonacci.v1.GetFibonacciRequest request,
+        io.grpc.stub.StreamObserver<com.giathuan.examples.fibonacci.v1.GetFibonacciResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetFibonacciMethod(), responseObserver);
     }
 
@@ -116,8 +116,8 @@ public final class FibonacciServiceGrpc {
             getGetFibonacciMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.giathuan.examples.fibonacci.GetFibonacciRequest,
-                com.giathuan.examples.fibonacci.Fibonacci>(
+                com.giathuan.examples.fibonacci.v1.GetFibonacciRequest,
+                com.giathuan.examples.fibonacci.v1.GetFibonacciResponse>(
                   this, METHODID_GET_FIBONACCI)))
           .build();
     }
@@ -145,8 +145,8 @@ public final class FibonacciServiceGrpc {
      * Get a Fibonacci number specified by its index.
      * </pre>
      */
-    public void getFibonacci(com.giathuan.examples.fibonacci.GetFibonacciRequest request,
-        io.grpc.stub.StreamObserver<com.giathuan.examples.fibonacci.Fibonacci> responseObserver) {
+    public void getFibonacci(com.giathuan.examples.fibonacci.v1.GetFibonacciRequest request,
+        io.grpc.stub.StreamObserver<com.giathuan.examples.fibonacci.v1.GetFibonacciResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetFibonacciMethod(), getCallOptions()), request, responseObserver);
     }
@@ -174,7 +174,7 @@ public final class FibonacciServiceGrpc {
      * Get a Fibonacci number specified by its index.
      * </pre>
      */
-    public com.giathuan.examples.fibonacci.Fibonacci getFibonacci(com.giathuan.examples.fibonacci.GetFibonacciRequest request) {
+    public com.giathuan.examples.fibonacci.v1.GetFibonacciResponse getFibonacci(com.giathuan.examples.fibonacci.v1.GetFibonacciRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetFibonacciMethod(), getCallOptions(), request);
     }
@@ -202,8 +202,8 @@ public final class FibonacciServiceGrpc {
      * Get a Fibonacci number specified by its index.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.giathuan.examples.fibonacci.Fibonacci> getFibonacci(
-        com.giathuan.examples.fibonacci.GetFibonacciRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.giathuan.examples.fibonacci.v1.GetFibonacciResponse> getFibonacci(
+        com.giathuan.examples.fibonacci.v1.GetFibonacciRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetFibonacciMethod(), getCallOptions()), request);
     }
@@ -229,8 +229,8 @@ public final class FibonacciServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_GET_FIBONACCI:
-          serviceImpl.getFibonacci((com.giathuan.examples.fibonacci.GetFibonacciRequest) request,
-              (io.grpc.stub.StreamObserver<com.giathuan.examples.fibonacci.Fibonacci>) responseObserver);
+          serviceImpl.getFibonacci((com.giathuan.examples.fibonacci.v1.GetFibonacciRequest) request,
+              (io.grpc.stub.StreamObserver<com.giathuan.examples.fibonacci.v1.GetFibonacciResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -254,7 +254,7 @@ public final class FibonacciServiceGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return com.giathuan.examples.fibonacci.FibonacciProtos.getDescriptor();
+      return com.giathuan.examples.fibonacci.v1.FibonacciProtos.getDescriptor();
     }
 
     @java.lang.Override
